@@ -1,0 +1,20 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pick.js",
+  "dependencies": {
+    "format-json": "1.0.3",
+    "jest": "26.6.3",
+    "json-colorizer": "2.2.2",
+    "ora": "^5.1.0",
+    "superagent": "6.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

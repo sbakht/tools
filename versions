@@ -1,0 +1,55 @@
+#/bin/sh
+
+echo "----------------------------------------"
+echo ""
+echo "LOCAL"
+echo ""
+
+WORKSPACE_ROOT=~/workspace
+
+echo "Header-bcom: "
+grep -m 1 version $WORKSPACE_ROOT/header-bcom/package.json
+
+echo "Footer-bcom: "
+grep -m 1 version $WORKSPACE_ROOT/footer-bcom/package.json
+
+echo "Header: "
+grep -m 1 version $WORKSPACE_ROOT/header/package.json
+
+echo "Footer: "
+grep -m 1 version $WORKSPACE_ROOT/footer/package.json
+
+echo "WGL: "
+grep -m 1 version $WORKSPACE_ROOT/header-footer-wgl/package.json
+
+echo "Home-page: "
+grep -m 1 version $WORKSPACE_ROOT/home-page/package.json
+
+
+echo ""
+echo "----------------------------------------"
+echo ""
+echo "GITLAB FDS Repository"
+echo ""
+
+echo "HEADER-BCOM:" # ID: 978
+curl -v --silent -XGET --header "PRIVATE-TOKEN: ${GITLAB_FDS_TOKEN}" "https://code.devops.fds.com/api/v4/projects/978/repository/files/package.json/raw?ref=master" 2>&1 | grep version
+
+echo "FOOTER-BCOM:" # ID: 979
+curl -v --silent -XGET --header "PRIVATE-TOKEN: ${GITLAB_FDS_TOKEN}" "https://code.devops.fds.com/api/v4/projects/979/repository/files/package.json/raw?ref=master" 2>&1 | grep version
+
+echo "HEADER:" # ID: 126
+curl -v --silent -XGET --header "PRIVATE-TOKEN: ${GITLAB_FDS_TOKEN}" "https://code.devops.fds.com/api/v4/projects/126/repository/files/package.json/raw?ref=master" 2>&1 | grep version
+
+echo "FOOTER:" # ID: 236
+curl -v --silent -XGET --header "PRIVATE-TOKEN: ${GITLAB_FDS_TOKEN}" "https://code.devops.fds.com/api/v4/projects/236/repository/files/package.json/raw?ref=master" 2>&1 | grep version
+
+echo "WGL:" # ID: 1063
+curl -v --silent -XGET --header "PRIVATE-TOKEN: ${GITLAB_FDS_TOKEN}" "https://code.devops.fds.com/api/v4/projects/1063/repository/files/package.json/raw?ref=master" 2>&1 | grep version
+
+echo "HOME PAGE:" # ID: 1796
+curl -v --silent -XGET --header "PRIVATE-TOKEN: ${GITLAB_FDS_TOKEN}" "https://code.devops.fds.com/api/v4/projects/1796/repository/files/package.json/raw?ref=master" 2>&1 | grep version
+
+echo ""
+echo ""
+echo "----------------------------------------"
