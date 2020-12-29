@@ -50,6 +50,7 @@ function getAlias(nickname) {
     feature: {
       "canvas": [],
       "facets": ['facet'],
+      "quick-view": [],
     },
     page: {
       "discovery-pages-bcom": ['disco', 'discovery', 'discovery-bcom', 'disco-bcom'],
